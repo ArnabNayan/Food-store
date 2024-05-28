@@ -1,0 +1,105 @@
+{
+    "foods":[
+        {
+            "title": "Margherita Pizza",
+            "description": "Classic margherita pizza with fresh tomatoes, mozzarella cheese, and basil.",
+            "image_url": "https://img.freepik.com/premium-psd/margherita-pizza-transparent-background_80983-11961.jpg",
+            "price": 300,
+            "ratings": 4.5,
+            "ingredients": ["Tomato", "Mozzarella Cheese", "Basil", "Olive Oil"],
+            "special_offers": "10% off on Wednesdays",
+            "preparation_time": "15 mins"
+          },
+          {
+            "title": "Spicy Chicken Wings",
+            "description": "Crispy chicken wings coated with a spicy sauce.",
+            "image_url": "https://img.freepik.com/premium-photo/chicken-wings-bbq-sauce-light-wooden-background-professional-photography-beautiful_1067807-326.jpg",
+            "price": 400,
+            "ratings": 4.7,
+            "ingredients": ["Chicken", "Hot Sauce", "Butter", "Garlic"],
+            "special_offers": null,
+            "preparation_time": "20 mins"
+          },
+          {
+            "title": "Caesar Salad",
+            "description": "Fresh romaine lettuce with Caesar dressing, croutons, and parmesan cheese.",
+            "image_url": "https://img.freepik.com/premium-psd/caesar-salad-transparent-background_80983-9573.jpg",
+            "price": 150,
+            "ratings": 4.3,
+            "ingredients": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"],
+            "special_offers": "Buy one, get one 50% off",
+            "preparation_time": "10 mins"
+          },
+          {
+            "title": "Chicken Burger",
+            "description": "Juicy chicken patty with lettuce, tomato, cheese, and our special sauce.",
+            "image_url": "https://png.pngtree.com/png-vector/20240124/ourlarge/pngtree-chicken-burger-with-lettuce-png-image_11484932.png",
+            "price": 320,
+            "ratings": 4.6,
+            "ingredients": ["Chicken Patty", "Lettuce", "Tomato", "Cheese", "Special Sauce"],
+            "special_offers": "Free fries with every burger",
+            "preparation_time": "15 mins"
+          },
+          {
+            "title": "Vegetable Stir Fry",
+            "description": "A mix of fresh vegetables stir-fried with soy sauce and garlic.",
+            "image_url": "https://media.istockphoto.com/id/1223612183/photo/pad-pak-ruam-or-veg-thai-stir-fried-vegetables-in-black-bowl-isolated-on-backdrop-pad-pak-is.jpg?s=612x612&w=0&k=20&c=CmuCJPrB7Fu8KGqlG6c4WIhqiPNpyhnfjZagkzKJCwE=",
+            "price": 120,
+            "ratings": 4.4,
+            "ingredients": ["Broccoli", "Carrots", "Bell Peppers", "Soy Sauce", "Garlic"],
+            "special_offers": null,
+            "preparation_time": "12 mins"
+          },
+          {
+            "title": "Grilled Salmon",
+            "description": "Fresh salmon fillet grilled to perfection with lemon and herbs.",
+            "image_url": "https://www.ambitiouskitchen.com/wp-content/uploads/2021/06/How-to-Grill-Salmon-9-594x594.jpg",
+            "price": 500,
+            "ratings": 4.8,
+            "ingredients": ["Salmon", "Lemon", "Herbs", "Olive Oil"],
+            "special_offers": "20% off on weekends",
+            "preparation_time": "18 mins"
+          },
+          {
+            "title": "Chocolate Lava Cake",
+            "description": "Warm chocolate cake with a gooey molten center, served with vanilla ice cream.",
+            "image_url": "https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/oguwaefq/f11bf919-8601-4b8f-b5f5-4a6cc3e175d2.jpg",
+            "price": 400,
+            "ratings": 4.9,
+            "ingredients": ["Chocolate", "Butter", "Sugar", "Eggs", "Flour"],
+            "special_offers": null,
+            "preparation_time": "12 mins"
+          },
+          {
+            "title": "Chicken Alfredo Pasta",
+            "description": "Pasta tossed in a creamy Alfredo sauce with grilled chicken and parmesan.",
+            "image_url": "https://img.freepik.com/premium-psd/chicken-alfredo-pasta-transparent-background_80983-9021.jpg",
+            "price": 380,
+            "ratings": 4.7,
+            "ingredients": ["Pasta", "Alfredo Sauce", "Grilled Chicken", "Parmesan Cheese"],
+            "special_offers": "Free garlic bread with every pasta",
+            "preparation_time": "20 mins"
+          },
+          {
+            "title": "Tacos",
+            "description": "Three soft tacos filled with your choice of meat, topped with lettuce, cheese, and salsa.",
+            "image_url": "https://img.freepik.com/premium-photo/tacos-with-white-background-high-quality-ultra-hd_889056-9354.jpg",
+            "price": 400,
+            "ratings": 4.5,
+            "ingredients": ["Tortillas", "Choice of Meat", "Lettuce", "Cheese", "Salsa"],
+            "special_offers": "Taco Tuesday: 50% off",
+            "preparation_time": "10 mins"
+          },
+          {
+            "title": "Margarita",
+            "description": "Classic margarita with tequila, lime juice, and triple sec.",
+            "image_url": "https://us.123rf.com/450wm/q77photo/q77photo1802/q77photo180200610/95031510-tasty-and-colorful-drinks-based-on-various-alcohols-syrups-and-liqueurs-unique-effect-of-the.jpg?ver=6",
+            "price": 90,
+            "ratings": 4.8,
+            "ingredients": ["Tequila", "Lime Juice", "Triple Sec", "Salt"],
+            "special_offers": "Happy Hour: 2 for 1",
+            "preparation_time": "5 mins"
+          }
+        ]
+        
+}
