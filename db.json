@@ -165,15 +165,26 @@
       "id": "32a8"
     },
     {
-      "id": "51ff",
-      "title": "Mutton Biriyani",
-      "description": "Its a very tasty and nice masala food items",
-      "image_url": "https://static.vecteezy.com/system/resources/previews/038/450/478/non_2x/ai-generated-a-plate-of-chicken-biryani-isolated-on-transparent-background-free-png.png",
-      "price": "250",
-      "ratings": "4.8",
-      "ingredients": "Mutton,Yogurt,salt,Lemon Juice,Red Chili Powder,Basmati Rice",
-      "special_offers": "10% discount on weekends",
-      "preparation_time": "30 min"
+      "id": "503c",
+      "title": "",
+      "description": "",
+      "image_url": "",
+      "price": "",
+      "ratings": "",
+      "ingredients": "",
+      "special_offers": "",
+      "preparation_time": ""
+    },
+    {
+      "id": "09b6",
+      "title": "",
+      "description": "",
+      "image_url": "",
+      "price": "",
+      "ratings": "",
+      "ingredients": "",
+      "special_offers": "",
+      "preparation_time": ""
     }
   ]
 }

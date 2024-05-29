@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 
 
 
@@ -14,8 +16,31 @@ const AddFood = () => {
         const special_offers=form.special_offers.value;
         const preparation_time =form.preparation_time.value;
         const data={title,description,image_url,price,ratings,ingredients,special_offers,preparation_time}
-
-        await fetch("http://localhost:3000/foods",{
+        const isConfirmed = await Swal.fire({
+            title: 'Are you sure?',
+            text: 'You won\'t be able to revert this!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes!',
+            cancelButtonText: 'No!',
+          });
+        // const confirm = window.confirm("Are you sure you want to proceed?");
+        // if (!confirm) {
+        //     return;
+        // }
+        // e.preventDefault()
+        // const form=e.target;
+        // const title=form.title.value;
+        // const description=form.description.value;
+        // const image_url=form.image_url.value;
+        // const price=form.price.value;
+        // const ratings=form.ratings.value;
+        // const ingredients=form.ingredients.value;
+        // const special_offers=form.special_offers.value;
+        // const preparation_time =form.preparation_time.value;
+        // const data={title,description,image_url,price,ratings,ingredients,special_offers,preparation_time}
+        if (isConfirmed.isConfirmed) {
+            await fetch("http://localhost:3000/foods",{
             method:"POST",
             headers:{
                 "Content-type":"applacation/json",
@@ -26,7 +51,24 @@ const AddFood = () => {
        .then((data)=>{
         console.log(data)
         form.reset()
+        Swal.fire({
+            title: 'Success!',
+            text: 'Food item has been added successfully',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+        Swal.fire({
+            title: 'Error!',
+            text: 'There was an error adding the food item',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
        })
+        }
+       
         
     }
   
