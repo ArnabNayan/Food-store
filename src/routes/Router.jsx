@@ -11,6 +11,7 @@ import AllFoods from "../Pages/AllFoods";
 import AddFood from "../Pages/AddFood";
 import FoodDetails from "../Pages/FoodDetails";
 import DashboardFoodDetails from "../Pages/DashboardFoodDetails";
+import EditFood from "../Pages/EditFood";
 
 
 
@@ -64,6 +65,11 @@ export const router = createBrowserRouter([
         {
             path:"all-foods/food-details/:id",
             element:<PrivateRoute><DashboardFoodDetails></DashboardFoodDetails></PrivateRoute>,
+            loader:({params})=>fetch(`http://localhost:3000/foods/${params.id}`)
+        },
+        {
+            path:"all-foods/edit/:id",
+            element:<PrivateRoute><EditFood></EditFood></PrivateRoute>,
             loader:({params})=>fetch(`http://localhost:3000/foods/${params.id}`)
         },
         

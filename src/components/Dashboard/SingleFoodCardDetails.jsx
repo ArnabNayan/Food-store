@@ -88,7 +88,7 @@ const SingleFoodCardDetails = ({ food }) => {
         <p className="font-serif text-lg ">Ratings: {ratings}</p>
         <div className="card-actions justify-end">
           <Link to={`food-details/${id}`} className="btn bg-amber-500 font-bold font-serif px-2 text-lg">Details</Link>
-          <Link to={`food-details/${id}`} className="btn bg-orange-500 font-bold font-serif px-2 text-lg">Edit</Link>
+          <Link to={`edit/${id}`} className="btn bg-orange-500 font-bold font-serif px-2 text-lg">Edit</Link>
           <button onClick={handleDelete} className="btn bg-yellow-400 font-bold font-serif px-2 text-lg">Delete</button>
         </div>
       </div>

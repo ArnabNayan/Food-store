@@ -15,7 +15,7 @@ const DashboardLayout = () => {
           <li className="border border-black p-4 text w-full">
             <Link to={"add-food"}>Add Food</Link>
           </li>
-          
+       
           <li className="border border-black p-4 text w-full">
             <Link to={"/"}>Home</Link>
           </li>
