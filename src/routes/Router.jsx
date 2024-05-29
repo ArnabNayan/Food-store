@@ -9,6 +9,7 @@ import DashboardLayout from "../Layouts/DashboardLayout";
 import PrivateRoute from "./privateroute/PrivateRoute";
 import AllFoods from "../Pages/AllFoods";
 import AddFood from "../Pages/AddFood";
+import FoodDetails from "../Pages/FoodDetails";
 
 
 export const router = createBrowserRouter([
@@ -18,7 +19,13 @@ export const router = createBrowserRouter([
       children:[
         {
             path:"/",
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader:()=>fetch('http://localhost:3000/foods')
+        },
+        {
+            path:"/foods/:id",
+            element:<FoodDetails></FoodDetails>,
+            loader:({params})=>fetch(`http://localhost:3000/foods/${params.id}`)
         },
         {
             path:"/login",
@@ -48,7 +55,8 @@ export const router = createBrowserRouter([
             },
           {
               path:"all-foods",
-              element:<PrivateRoute><AllFoods></AllFoods> </PrivateRoute>
+              element:<PrivateRoute><AllFoods></AllFoods> </PrivateRoute>,
+              loader:()=>fetch('http://localhost:3000/foods')
           },
           {
             path:"add-food",

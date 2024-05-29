@@ -1,9 +1,12 @@
 
 
+
 const AddFood = () => {
+  
+  
     return (
         <div>
-          This is addFood  
+          
         </div>
     );
 };
