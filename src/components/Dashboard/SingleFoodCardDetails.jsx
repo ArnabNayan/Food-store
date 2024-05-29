@@ -15,7 +15,15 @@ const SingleFoodCardDetails = ({food}) => {
           <p className="font-serif text-lg">Price:{price} tk</p>
           <p className="font-serif text-lg ">Ratings:{ratings}</p>
           <div className="card-actions justify-end">
-            <Link to={`/foods/${id}`} className="btn bg-amber-500 font-bold font-serif px-5 text-lg">Details</Link>
+             <button className="btn bg-amber-500 font-bold font-serif px-2 text-lg">
+             <Link to={`food-details/${id}`} >Details</Link>
+             </button>
+             <button className="btn bg-orange-500 font-bold font-serif px-2 text-lg">
+             <Link to={`food-details/${id}`} >Edit</Link>
+             </button>
+             <button className="btn bg-yellow-400 font-bold font-serif px-2 text-lg">
+             <Link to={`food-details/${id}`} >Delete</Link>
+             </button>
           </div>
         </div>
       </div>
