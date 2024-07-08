@@ -4,14 +4,9 @@
       "title": "Margherita Pizza",
       "description": "Classic margherita pizza with fresh tomatoes, mozzarella cheese, and basil.",
       "image_url": "https://img.freepik.com/premium-psd/margherita-pizza-transparent-background_80983-11961.jpg",
-      "price": 300,
-      "ratings": 4.5,
-      "ingredients": [
-        "Tomato",
-        "Mozzarella Cheese",
-        "Basil",
-        "Olive Oil"
-      ],
+      "price": "320",
+      "ratings": "4.5",
+      "ingredients": "Tomato,Mozzarella Cheese,Basil,Olive Oil",
       "special_offers": "10% off on Wednesdays",
       "preparation_time": "15 mins",
       "id": "bcb5"
@@ -20,15 +15,10 @@
       "title": "Spicy Chicken Wings",
       "description": "Crispy chicken wings coated with a spicy sauce.",
       "image_url": "https://img.freepik.com/premium-photo/chicken-wings-bbq-sauce-light-wooden-background-professional-photography-beautiful_1067807-326.jpg",
-      "price": 400,
-      "ratings": 4.7,
-      "ingredients": [
-        "Chicken",
-        "Hot Sauce",
-        "Butter",
-        "Garlic"
-      ],
-      "special_offers": null,
+      "price": "350",
+      "ratings": "4.7",
+      "ingredients": "Chicken,Hot Sauce,Butter,Garlic",
+      "special_offers": "",
       "preparation_time": "20 mins",
       "id": "0a32"
     },
@@ -119,14 +109,9 @@
       "title": "Chicken Alfredo Pasta",
       "description": "Pasta tossed in a creamy Alfredo sauce with grilled chicken and parmesan.",
       "image_url": "https://img.freepik.com/premium-psd/chicken-alfredo-pasta-transparent-background_80983-9021.jpg",
-      "price": 380,
-      "ratings": 4.7,
-      "ingredients": [
-        "Pasta",
-        "Alfredo Sauce",
-        "Grilled Chicken",
-        "Parmesan Cheese"
-      ],
+      "price": "380",
+      "ratings": "4.7",
+      "ingredients": "Pasta,Alfredo Sauce,Grilled Chicken,Parmesan Cheese",
       "special_offers": "Free garlic bread with every pasta",
       "preparation_time": "20 mins",
       "id": "1679"
@@ -152,39 +137,34 @@
       "title": "Margarita",
       "description": "Classic margarita with tequila, lime juice, and triple sec.",
       "image_url": "https://us.123rf.com/450wm/q77photo/q77photo1802/q77photo180200610/95031510-tasty-and-colorful-drinks-based-on-various-alcohols-syrups-and-liqueurs-unique-effect-of-the.jpg?ver=6",
-      "price": 90,
-      "ratings": 4.8,
-      "ingredients": [
-        "Tequila",
-        "Lime Juice",
-        "Triple Sec",
-        "Salt"
-      ],
+      "price": "100",
+      "ratings": "4.8",
+      "ingredients": "Tequila,Lime Juice,Triple Sec,Salt",
       "special_offers": "Happy Hour: 2 for 1",
       "preparation_time": "5 mins",
       "id": "32a8"
     },
     {
-      "id": "09b6",
-      "title": "",
-      "description": "",
-      "image_url": "",
-      "price": "",
-      "ratings": "",
-      "ingredients": "",
-      "special_offers": "",
-      "preparation_time": ""
+      "id": "31b5",
+      "title": "Mutton Biriyani",
+      "description": "Its a very tasty and nice masala food items",
+      "image_url": "https://static.vecteezy.com/system/resources/previews/038/450/478/non_2x/ai-generated-a-plate-of-chicken-biryani-isolated-on-transparent-background-free-png.png",
+      "price": "250",
+      "ratings": "4.8",
+      "ingredients": "Mutton,Yogurt,salt,Lemon Juice,Red Chili Powder,Basmati Rice",
+      "special_offers": "10% discount on weekends",
+      "preparation_time": "30 min"
     },
     {
-      "id": "0cec",
-      "title": "",
-      "description": "",
-      "image_url": "",
-      "price": "",
-      "ratings": "",
-      "ingredients": "",
-      "special_offers": "",
-      "preparation_time": ""
+      "id": "b0f5",
+      "title": "Pasta",
+      "description": "Its a very tasty and nice masala food items",
+      "image_url": "https://data.thefeedfeed.com/static/2019/03/20/15531101035c929457c2ecd.jpg",
+      "price": "150",
+      "ratings": "4.5",
+      "ingredients": "Flour,Eggs,Water,Tomato sauce",
+      "special_offers": "15% discount on weekends",
+      "preparation_time": "10 min"
     }
   ]
 }

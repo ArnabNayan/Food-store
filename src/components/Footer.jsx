@@ -3,7 +3,7 @@
 const Footer = () => {
     return (
         <footer className="footer footer-center p-10 bg-amber-500 text-base-content rounded">
-  <nav className="grid grid-flow-col gap-4 text-slate-700 font-serif font-semibold text-xl">
+  <nav className="grid grid-flow-col gap-4 text-slate-700 font-serif font-semibold text-lg lg:text-xl">
     <a className="link link-hover">About us</a>
     <a className="link link-hover">Contact</a>
     <a className="link link-hover">Jobs</a>
@@ -17,7 +17,7 @@ const Footer = () => {
     </div>
   </nav> 
   <aside>
-    <p className="text-xl text-slate-700 font-serif font-semibold">Copyright © 2024 - All right reserved by ACME Industries Ltd</p>
+    <p className="text-lg lg:ext-xl text-slate-700 font-serif font-semibold">Copyright © 2024 - All right reserved by FoodiVerse</p>
   </aside>
 </footer>
     );

@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes fillFromLeft {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .btn-fill {
+    background: linear-gradient(60deg, #00ffbf, #f57c0b);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position 1s ease-in-out;
+  }
+  
+  .btn-fill:hover {
+    background-position: 0 0;
+  }

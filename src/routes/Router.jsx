@@ -12,6 +12,12 @@ import AddFood from "../Pages/AddFood";
 import FoodDetails from "../Pages/FoodDetails";
 import DashboardFoodDetails from "../Pages/DashboardFoodDetails";
 import EditFood from "../Pages/EditFood";
+import FoodItems from "../Pages/FoodItems";
+import FoodCategory from "../Pages/FoodCategory";
+import Cart from "../components/Dashboard/Cart/Cart";
+import AllUsers from "../components/Dashboard/AllUsers/AllUsers";
+import AdminRoute from "./AdminRoute";
+import Payment from "../components/Dashboard/Payment/Payment";
 
 
 
@@ -23,12 +29,12 @@ export const router = createBrowserRouter([
         {
             path:"/",
             element:<Home></Home>,
-            loader:()=>fetch('http://localhost:3000/foods')
+            loader:()=>fetch('http://localhost:5000/foods')
         },
         {
             path:"/foods/:id",
             element:<FoodDetails></FoodDetails>,
-            loader:({params})=>fetch(`http://localhost:3000/foods/${params.id}`)
+            loader:({params})=>fetch(`http://localhost:5000/foods/${params.id}`)
         },
         {
             path:"/login",
@@ -41,7 +47,24 @@ export const router = createBrowserRouter([
         {
             path:"/about",
             element:<AboutUs></AboutUs>
-        }
+        },
+        {
+            path:"/food-items",
+            element:<FoodItems></FoodItems>,
+            loader:()=>fetch('http://localhost:5000/foodsDatabase')
+        },
+       
+        {
+            path:"food-items/food-details/:id",
+            element:<DashboardFoodDetails></DashboardFoodDetails>,
+            loader:({params})=>fetch(`http://localhost:5000/foodsDatabase/${params.id}`)
+        },
+
+        {
+            path:"/order-by-category",
+            element:<FoodCategory></FoodCategory>,
+            loader:()=>fetch('http://localhost:5000/foodsDatabase')
+        },
        
       ]
     },
@@ -55,23 +78,31 @@ export const router = createBrowserRouter([
             },
           {
               path:"all-foods",
-              element:<PrivateRoute><AllFoods></AllFoods> </PrivateRoute>,
-              loader:()=>fetch('http://localhost:3000/foods')
+              element:<PrivateRoute><AdminRoute><AllFoods></AllFoods></AdminRoute> </PrivateRoute>,
+              loader:()=>fetch('http://localhost:5000/foodsDatabase')
           },
           {
             path:"add-food",
-            element:<PrivateRoute><AddFood></AddFood></PrivateRoute>
+            element:<PrivateRoute><AdminRoute><AddFood></AddFood></AdminRoute></PrivateRoute>
         },
-        {
-            path:"all-foods/food-details/:id",
-            element:<PrivateRoute><DashboardFoodDetails></DashboardFoodDetails></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:3000/foods/${params.id}`)
-        },
+       
         {
             path:"all-foods/edit/:id",
-            element:<PrivateRoute><EditFood></EditFood></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:3000/foods/${params.id}`)
+            element:<PrivateRoute><AdminRoute><EditFood></EditFood></AdminRoute></PrivateRoute>,
+            loader:({params})=>fetch(`http://localhost:5000/foodsDatabase/${params.id}`)
         },
+        {
+            path:"cart",
+            element:<PrivateRoute><Cart></Cart></PrivateRoute>
+        },
+        {
+            path:"users",
+            element:<PrivateRoute><AdminRoute><AllUsers></AllUsers></AdminRoute></PrivateRoute>
+        },
+        {
+            path:"payment",
+            element:<PrivateRoute><Payment></Payment></PrivateRoute>
+        }
         
         ],   
     }

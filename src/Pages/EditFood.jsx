@@ -10,7 +10,7 @@ const EditFood = () => {
   const [price, setPrice] = useState(food.price);
   const [description, setDescription] = useState(food.description);
   const [ratings, setRatings] = useState(food.ratings);
-  const [preparation_time, setPreparationTime] = useState(food.preparation_time);
+  const [category, setCategory] = useState(food.category);
   const [image_url, setImageURL] = useState(food.image_url);
   const [ingredients, setIngredients] = useState(food.ingredients);
   const[special_offers,setOffers]=useState(food.special_offers)
@@ -24,8 +24,8 @@ const EditFood = () => {
         const ratings=form.ratings.value;
         const ingredients=form.ingredients.value;
         const special_offers=form.special_offers.value;
-        const preparation_time =form.preparation_time.value;
-        const data={title,description,image_url,price,ratings,ingredients,special_offers,preparation_time}
+        const category =form.category.value;
+        const data={title,description,image_url,price,ratings,ingredients,special_offers,category}
         const isConfirmed = await Swal.fire({
             title: 'Are you sure?',
             text: 'You won\'t be able to revert this!',
@@ -36,10 +36,10 @@ const EditFood = () => {
           });
      
         if (isConfirmed.isConfirmed) {
-            await fetch(`http://localhost:3000/foods/${food.id}`,{
+            await fetch(`http://localhost:5000/foodsDatabase/${food._id}`,{
             method:"PATCH",
             headers:{
-                "Content-type":"applacation/json",
+                "Content-type":"application/json",
             },
             body:JSON.stringify(data),
        })
@@ -70,7 +70,7 @@ const EditFood = () => {
   
     return (
         <div>
-        <h1 className="text-center text-5xl text-amber-500  font-serif font-bold">------Edit Food Item------</h1>
+        <h1 className="text-center text-2xl lg:text-4xl text-amber-500  font-serif font-bold">------Edit Food Item------</h1>
   
         <div className="my-16">
           <form onSubmit={handleSubmit}>
@@ -149,15 +149,15 @@ const EditFood = () => {
               <input
                 className="bg-gray-100 p-4 w-full border border-amber-500 rounded-lg"
                 type="text"
-                name="preparation_time"
-                placeholder="Preparation Time"
-                value={preparation_time}
-              onChange={(e) => setPreparationTime(e.target.value)}
+                name="category"
+                placeholder="Category"
+                value={category}
+              onChange={(e) => setCategory(e.target.value)}
               />
             </div>
             <div className="mt-2 flex justify-center items-center">
               <input
-                className="btn mt-4 w-full bg-amber-500 text-white text-lg "
+                className="btn mt-4 w-full bg-yellow-600 text-white text-lg "
                 type="submit"
                 value="Edit food"
               />

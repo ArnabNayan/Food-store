@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../Login-registration/GoogleLogin";
 import useAuth from "../hooks/useAuth";
 import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
@@ -17,6 +18,12 @@ const Login = () => {
     
         console.log(email, password);
       await signIn(email,password)
+      Swal.fire({
+        title: 'Success!',
+        text: 'Login has become successfull',
+        icon: 'success',
+        confirmButtonText: 'OK'
+    });
     }
     useEffect(()=>{
       if(user){
