@@ -78,12 +78,14 @@
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import { FaShoppingCart } from 'react-icons/fa';
+import {  FaHamburger, FaShoppingCart } from 'react-icons/fa';
 import useCart from '../hooks/useCart';
+import useAdmin from '../hooks/useAdmin';
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isAdmin]=useAdmin()
   const [cart]=useCart()
   const handleLogOut = async () => {
     await logOut();
@@ -116,6 +118,7 @@ const Navbar = () => {
           >
             <li><Link to="/" onClick={closeDropdown}>Home</Link></li>
             <li><Link to="/about" onClick={closeDropdown}>About Us</Link></li>
+            <li><Link to="/contact" onClick={closeDropdown}>Contact</Link></li>
             <li>
             <Link to="/dashboard/cart">
             
@@ -140,16 +143,23 @@ const Navbar = () => {
                 </ul>
               </details>
             </li>
-            <li><Link to="/dashboard" onClick={closeDropdown}>Dashboard</Link></li>
-            <li><Link to="/login" onClick={closeDropdown}>Login</Link></li>
+
+            {
+            user&&isAdmin &&  <li className="text-lg text-slate-700 font-serif font-bold"><Link to="/dashboard/adminHome">Dashboard</Link></li>
+          }
+         {
+            user&& !isAdmin &&  <li className="text-lg text-slate-700 font-serif font-bold"><Link to="/dashboard/userHome">Dashboard</Link></li>
+          }
+            {/* <li><Link to="/login" onClick={closeDropdown}>Login</Link></li> */}
           </ul>
         </div>
-        <a className="font-serif font-bold text-amber-800 text-2xl lg:text-4xl">FoodiVerse</a>
+        <a className="font-serif font-bold text-amber-800 text-2xl ms-6 lg:ms-10 lg:text-4xl"><FaHamburger className='-mb-6 lg:-mb-9 -ms-8 lg:-ms-10'> </FaHamburger> FoodiVerse</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li className="text-lg text-slate-700 font-serif font-bold"><Link to="/">Home</Link></li>
           <li className="text-lg text-slate-700 font-serif font-bold"><Link to="/about">About Us</Link></li>
+          <li className="text-lg text-slate-700 font-serif font-bold"><Link to="/contact">Contact</Link></li>
           <li>
             <Link to="/dashboard/cart">
             
@@ -174,7 +184,13 @@ const Navbar = () => {
               </ul>
             </details>
           </li>
-          <li className="text-lg text-slate-700 font-serif font-bold"><Link to="/dashboard">Dashboard</Link></li>
+          {
+            user&&isAdmin &&  <li className="text-lg text-slate-700 font-serif font-bold"><Link to="/dashboard/adminHome">Dashboard</Link></li>
+          }
+         {
+            user&& !isAdmin &&  <li className="text-lg text-slate-700 font-serif font-bold"><Link to="/dashboard/userHome">Dashboard</Link></li>
+          }
+         
           {/* <li className="lg:text-lg text-slate-700 font-serif font-bold"></li> */}
         </ul>
       </div>

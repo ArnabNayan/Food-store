@@ -32,12 +32,12 @@ const FoodItems = () => {
         </div>
       </div>
      
-             <h1 className="text-center text-2xl mt-5 lg:text-4xl text-amber-500  font-serif font-bold">------All Food Items------</h1> 
+             <h1 data-aos="fade-up" data-aos-duration="2000" className="text-center text-2xl mt-5 lg:text-4xl text-amber-500  font-serif font-bold">------All Food Items------</h1> 
              <div className="flex justify-center py-10">
-             <div className="grid grid-cols-1 lg:grid-cols-4 items-center justify-center gap-8">
+             <div data-aos="fade-up" data-aos-duration="2000" className="grid grid-cols-1 lg:grid-cols-4 items-center justify-center gap-8">
                  {
                     foodItems.slice(0,visibleCount).map((foodItem,index)=>(
-                        <FoodItemsDetails key={foodItem._id}foodItem={foodItem}index={index+1}></FoodItemsDetails>
+                        <FoodItemsDetails data-aos="fade-up" data-aos-duration="2000"  key={foodItem._id}foodItem={foodItem}index={index+1}></FoodItemsDetails>
                     ))
                 } 
              </div>
@@ -46,7 +46,7 @@ const FoodItems = () => {
               visibleCount<foodItems.length&&
               (
                 <div className="flex justify-center">
-                   <button onClick={handleSeeMore} className="btn btn-fill px-6 text-md lg:text-xl font-serif text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50">See More</button>
+                   <button data-aos="zoom-in" data-aos-duration="2000" onClick={handleSeeMore} className="btn btn-fill px-6 text-md lg:text-xl font-serif text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50">See More</button>
                 </div>
               )
             }

@@ -52,7 +52,7 @@
         // const preparation_time =form.preparation_time.value;
         // const data={title,description,image_url,price,ratings,ingredients,special_offers,preparation_time}
 //         if (isConfirmed.isConfirmed) {
-//             await fetch("http://localhost:5000/foodsDatabase",{
+//             await fetch("https://food-store-server-g3gt.onrender.com/foodsDatabase",{
 //             method:"POST",
 //             headers:{
 //                 "Content-type":"application/json",
@@ -228,7 +228,7 @@ const AddFood = () => {
         });
 
         if (isConfirmed.isConfirmed) {
-            await fetch("http://localhost:5000/foodsDatabase", {
+            await fetch("https://food-store-server-g3gt.onrender.com/foodsDatabase", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
@@ -301,7 +301,7 @@ const AddFood = () => {
                          
                         />
                     </div>
-                    <div className="mt-2">
+                    {/* <div className="mt-2">
                         <input
                             className="bg-gray-100 p-4 w-full border border-amber-500 rounded-lg"
                             type="text"
@@ -309,7 +309,7 @@ const AddFood = () => {
                             placeholder="Ratings"
                            
                         />
-                    </div>
+                    </div> */}
                     <div className="mt-2">
                         <input
                             className="bg-gray-100 p-4 w-full border border-amber-500 rounded-lg"

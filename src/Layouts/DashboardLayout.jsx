@@ -1,4 +1,4 @@
-import { FaHome, FaMoneyCheckAlt,  FaRegEdit, FaShoppingCart, FaTasks, FaUserCircle, FaUsers, FaUserShield, FaUtensils } from "react-icons/fa";
+import { FaClipboardList, FaHome, FaMoneyCheckAlt,  FaRegEdit, FaShoppingCart, FaTasks, FaUserCircle, FaUsers, FaUserShield, FaUtensils } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
@@ -81,39 +81,42 @@ const DashboardLayout = () => {
                   isAdmin?
                   <>
                   <li className="font-serif font-bold w-full">
-                      <Link to={""} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaUserShield className="-mb-5 ms-36 lg:ms-5"></FaUserShield>Admin Home</Link>
+                      <Link to={"/dashboard/adminhome"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaUserShield className="-mb-5 ms-28 lg:ms-5"></FaUserShield>Admin Home</Link>
                   </li>
                   <li className="font-serif font-bold w-full">
-                      <Link to={"users"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaUsers className="-mb-5 ms-36 lg:ms-4"></FaUsers>Manage Users</Link>
+                      <Link to={"users"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaUsers className="-mb-5 ms-28 lg:ms-4"></FaUsers>Manage Users</Link>
                   </li>
                   <li className="font-serif font-bold w-full">
-                      <Link to={"all-foods"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaTasks className="-mb-5 ms-36 lg:ms-4"></FaTasks>Manage Foods</Link>
+                      <Link to={"all-foods"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaTasks className="-mb-5 ms-28 lg:ms-4"></FaTasks>Manage Foods</Link>
                   </li>
                  
                   
                   <li className="font-serif font-bold w-full">
-                      <Link to={"add-food"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaUtensils className="-mb-5 ms-40 lg:ms-8"></FaUtensils>Add Food</Link>
+                      <Link to={"add-food"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaUtensils className="-mb-5 ms-28 lg:ms-8"></FaUtensils>Add Food</Link>
+                  </li>
+                  <li className="font-serif font-bold w-full">
+                      <Link to={"order"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaClipboardList className="-mb-5 ms-20 lg:ms-0"></FaClipboardList>Order Management</Link>
                   </li>
                   </>:
                   <>
                      <li className="font-serif font-bold w-full">
-                      <Link to={"userHome"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaUserCircle className="-mb-5 ms-36 lg:ms-6"></FaUserCircle>User Home</Link>
+                      <Link to={"/dashboard/userHome"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaUserCircle className="-mb-5 ms-28 lg:ms-6"></FaUserCircle>User Home</Link>
                   </li>
                   <li className="font-serif font-bold w-full">
-                      <Link to={"cart"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaShoppingCart className="-mb-5 ms-40 lg:ms-8"></FaShoppingCart>My Cart({cart.length})</Link>
+                      <Link to={"cart"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaShoppingCart className="-mb-5 ms-28 lg:ms-8"></FaShoppingCart>My Cart({cart.length})</Link>
                   </li>
                   <li className="font-serif font-bold w-full">
-                      <Link to={"review"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaRegEdit className="-mb-5 ms-36 lg:ms-6"></FaRegEdit>  Add Review</Link>
+                      <Link to={"review"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaRegEdit className="-mb-5 ms-28 lg:ms-6"></FaRegEdit>  Add Review</Link>
                   </li>
                   <li className="font-serif font-bold w-full">
-                      <Link to={"payment"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaMoneyCheckAlt className="-mb-5 ms-32 lg:ms-1"></FaMoneyCheckAlt>Payment History</Link>
+                      <Link to={"paymentHistory"} className="block p-4 border border-white text-black text-center hover:bg-yellow-500"><FaMoneyCheckAlt className="-mb-5 ms-24 lg:ms-1"></FaMoneyCheckAlt>Payment History</Link>
                   </li>
                   </>
                 }
                   
                  
                   <li className="font-serif font-bold w-full">
-                      <Link to={"/"} className="block p-4 text-black border border-white text-center hover:bg-yellow-500"><FaHome className="-mb-5 ms-40 lg:ms-10"></FaHome>Home</Link>
+                      <Link to={"/"} className="block p-4 text-black border border-white text-center hover:bg-yellow-500"><FaHome className="-mb-5 ms-28 lg:ms-10"></FaHome>Home</Link>
                   </li>
               </ul>
           </div>

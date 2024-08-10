@@ -44,12 +44,12 @@
 
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import StarRating from '../StarRating';
+// import StarRating from '../StarRating';
 
 // eslint-disable-next-line react/prop-types
 const SingleFoodCardDetails = ({ food }) => {
   // eslint-disable-next-line react/prop-types
-  const { _id, title, image_url,  price, ratings,category } = food;
+  const { _id, title, image_url,  price, category } = food;
   const navigate = useNavigate();
 
   const handleDelete = async () => {
@@ -63,7 +63,7 @@ const SingleFoodCardDetails = ({ food }) => {
     });
 
     if (isConfirmed.isConfirmed) {
-      await fetch(`http://localhost:5000/foodsDatabase/${_id}`, {
+      await fetch(`https://food-store-server-g3gt.onrender.com/foodsDatabase/${_id}`, {
         method: 'DELETE',
       })
         .then(res => res.json())
@@ -81,13 +81,13 @@ const SingleFoodCardDetails = ({ food }) => {
 
   return (
     <div className="card w-auto bg-base-100  shadow-xl">
-      <figure><img className=" h-52 w-64" src={image_url} alt="Food" /></figure>
+      <figure><img className=" h-52 w-64 transform transition-transform duration-300 hover:scale-110" src={image_url} alt="Food" /></figure>
       <div className="card-body">
         <h2 className="card-title font-bold font-serif text-md lg:text-xl">{title}</h2>
         
         <p className="font-serif text-md">Price: {price} tk</p>
         <p className="font-serif  text-md">Category: {category} </p>
-        <p className="font-serif  text-md "><StarRating rating={ratings} /></p>
+        {/* <p className="font-serif  text-md "><StarRating rating={ratings} /></p> */}
         <div className="card-actions justify-end">
           {/* <Link to={`food-details/${_id}`} className="btn bg-amber-500 font-bold font-serif px-2 text-xs">Details</Link> */}
           <Link to={`edit/${_id}`} className="btn bg-orange-500 font-bold font-serif px-2 text-sm">Edit</Link>

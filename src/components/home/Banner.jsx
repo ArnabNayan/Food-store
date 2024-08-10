@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 
 const Banner = () => {
@@ -19,7 +20,8 @@ const Banner = () => {
 />
             </h1>
             <p className="mb-5 text-lg lg:text-2xl font-serif font-semibold text-slate-400">Nice environment with delicious and pure food items,Enjoy the different tasty food from our shop.</p>
-            <button className="btn btn-fill px-6 text-md lg:text-xl font-serif text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50">Visit Us</button>
+            {/* <button className="btn btn-fill px-6 text-md lg:text-xl font-serif text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50">Visit Us</button> */}
+            <Link data-aos="zoom-in" data-aos-duration="2000" to="/about" className="btn btn-fill px-6 text-md lg:text-xl font-serif text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50">Visit Us</Link>
           </div>
         </div>
       </div>

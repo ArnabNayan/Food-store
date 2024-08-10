@@ -18,6 +18,12 @@ import Cart from "../components/Dashboard/Cart/Cart";
 import AllUsers from "../components/Dashboard/AllUsers/AllUsers";
 import AdminRoute from "./AdminRoute";
 import Payment from "../components/Dashboard/Payment/Payment";
+import PaymentHistory from "../components/Dashboard/PaymentHistory/PaymentHistory";
+import AdminHome from "../components/Dashboard/AdminHome/AdminHome";
+import UserHome from "../components/Dashboard/UserHome/UserHome";
+import AddReview from "../components/Dashboard/AddReview/AddReview";
+import OrderManagement from "../components/Dashboard/OrderManagement/OrderManagement";
+import ContactUs from "../Pages/ContactUs";
 
 
 
@@ -29,12 +35,12 @@ export const router = createBrowserRouter([
         {
             path:"/",
             element:<Home></Home>,
-            loader:()=>fetch('http://localhost:5000/foods')
+            loader:()=>fetch('https://food-store-server-g3gt.onrender.com/foods')
         },
         {
             path:"/foods/:id",
             element:<FoodDetails></FoodDetails>,
-            loader:({params})=>fetch(`http://localhost:5000/foods/${params.id}`)
+            loader:({params})=>fetch(`https://food-store-server-g3gt.onrender.com/foods/${params.id}`)
         },
         {
             path:"/login",
@@ -49,21 +55,25 @@ export const router = createBrowserRouter([
             element:<AboutUs></AboutUs>
         },
         {
+            path:"/contact",
+            element:<ContactUs></ContactUs>
+        },
+        {
             path:"/food-items",
             element:<FoodItems></FoodItems>,
-            loader:()=>fetch('http://localhost:5000/foodsDatabase')
+            loader:()=>fetch('https://food-store-server-g3gt.onrender.com/foodsDatabase')
         },
        
         {
             path:"food-items/food-details/:id",
             element:<DashboardFoodDetails></DashboardFoodDetails>,
-            loader:({params})=>fetch(`http://localhost:5000/foodsDatabase/${params.id}`)
+            loader:({params})=>fetch(`https://food-store-server-g3gt.onrender.com/foodsDatabase/${params.id}`)
         },
 
         {
             path:"/order-by-category",
             element:<FoodCategory></FoodCategory>,
-            loader:()=>fetch('http://localhost:5000/foodsDatabase')
+            loader:()=>fetch('https://food-store-server-g3gt.onrender.com/foodsDatabase')
         },
        
       ]
@@ -79,7 +89,7 @@ export const router = createBrowserRouter([
           {
               path:"all-foods",
               element:<PrivateRoute><AdminRoute><AllFoods></AllFoods></AdminRoute> </PrivateRoute>,
-              loader:()=>fetch('http://localhost:5000/foodsDatabase')
+              loader:()=>fetch('https://food-store-server-g3gt.onrender.com/foodsDatabase')
           },
           {
             path:"add-food",
@@ -89,7 +99,7 @@ export const router = createBrowserRouter([
         {
             path:"all-foods/edit/:id",
             element:<PrivateRoute><AdminRoute><EditFood></EditFood></AdminRoute></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/foodsDatabase/${params.id}`)
+            loader:({params})=>fetch(`https://food-store-server-g3gt.onrender.com/foodsDatabase/${params.id}`)
         },
         {
             path:"cart",
@@ -102,6 +112,26 @@ export const router = createBrowserRouter([
         {
             path:"payment",
             element:<PrivateRoute><Payment></Payment></PrivateRoute>
+        },
+        {
+            path:"paymentHistory",
+            element:<PaymentHistory></PaymentHistory>
+        },
+        {
+            path:"adminhome",
+            element:<PrivateRoute><AdminRoute><AdminHome></AdminHome></AdminRoute></PrivateRoute>
+        },
+        {
+            path:"userHome",
+            element:<UserHome></UserHome>
+        },
+        {
+            path:"review",
+            element:<AddReview></AddReview>
+        },
+        {
+            path:"order",
+            element:<PrivateRoute><AdminRoute><OrderManagement></OrderManagement></AdminRoute></PrivateRoute>
         }
         
         ],   

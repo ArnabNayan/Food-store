@@ -1,10 +1,10 @@
 import { Link, useLoaderData } from "react-router-dom";
-import StarRating from "../components/StarRating";
+// import StarRating from "../components/StarRating";
 
 
 const FoodDetails = () => {
     const food=useLoaderData()
-    const{title,image_url,description,price,ratings,ingredients,special_offers,preparation_time}=food;
+    const{title,image_url,description,price,ingredients,special_offers,preparation_time}=food;
     return (
        <>
           <div className="hero min-h-screen  bg-yellow-100">
@@ -17,7 +17,7 @@ const FoodDetails = () => {
             <p className="py-2 text-md lg:text-lg font-sherif">Ingredients:{ingredients}</p>
             <p className="py-2 text-md lg:text-lg font-sherif">Making Time:{preparation_time}</p>
             <p className="py-2 text-md lg:text-lg font-sherif">Offers:{special_offers}</p>
-            <p className="py-2 text-md lg:text-lg font-sherif"><StarRating rating={ratings} /></p>
+            {/* <p className="py-2 text-md lg:text-lg font-sherif"><StarRating rating={ratings} /></p> */}
            
          <div className="flex items-center justify-center mt-36 ">
            <button className="btn bg-amber-500  rounded-lg px-10 text-lg font-serif"><Link to="/">Back</Link></button>

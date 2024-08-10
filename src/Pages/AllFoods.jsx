@@ -8,7 +8,7 @@ const AllFoods = () => {
     return (
         <div>
            <h1 className="text-center text-2xl lg:text-4xl text-amber-500  font-serif font-bold">------All Food Items------</h1>  
-           <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-5">
+           <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 mt-5">
                 {foods.map(food => (
                   
                     <SingleFoodCardDetails key={food._id} food={food}></SingleFoodCardDetails>

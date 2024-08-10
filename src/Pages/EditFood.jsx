@@ -9,7 +9,7 @@ const EditFood = () => {
     const [title, setTitle] = useState(food.title);
   const [price, setPrice] = useState(food.price);
   const [description, setDescription] = useState(food.description);
-  const [ratings, setRatings] = useState(food.ratings);
+  // const [ratings, setRatings] = useState(food.ratings);
   const [category, setCategory] = useState(food.category);
   const [image_url, setImageURL] = useState(food.image_url);
   const [ingredients, setIngredients] = useState(food.ingredients);
@@ -21,11 +21,11 @@ const EditFood = () => {
         const description=form.description.value;
         const image_url=form.image_url.value;
         const price=form.price.value;
-        const ratings=form.ratings.value;
+        // const ratings=form.ratings.value;
         const ingredients=form.ingredients.value;
         const special_offers=form.special_offers.value;
         const category =form.category.value;
-        const data={title,description,image_url,price,ratings,ingredients,special_offers,category}
+        const data={title,description,image_url,price,ingredients,special_offers,category}
         const isConfirmed = await Swal.fire({
             title: 'Are you sure?',
             text: 'You won\'t be able to revert this!',
@@ -36,7 +36,7 @@ const EditFood = () => {
           });
      
         if (isConfirmed.isConfirmed) {
-            await fetch(`http://localhost:5000/foodsDatabase/${food._id}`,{
+            await fetch(`https://food-store-server-g3gt.onrender.com/foodsDatabase/${food._id}`,{
             method:"PATCH",
             headers:{
                 "Content-type":"application/json",
@@ -115,7 +115,7 @@ const EditFood = () => {
               onChange={(e) => setPrice(e.target.value)}
               />
             </div>
-            <div className="mt-2">
+            {/* <div className="mt-2">
               <input
                 className="bg-gray-100 p-4 w-full border border-amber-500 rounded-lg"
                 type="text"
@@ -124,7 +124,7 @@ const EditFood = () => {
                 value={ratings}
               onChange={(e) => setRatings(e.target.value)}
               />
-            </div>
+            </div> */}
             <div className="mt-2">
               <input
                 className="bg-gray-100 p-4 w-full border border-amber-500 rounded-lg"
