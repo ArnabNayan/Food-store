@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
 
 const axiosSecure=axios.create({
-    // https://food-store-server-g3gt.onrender.com      
-    baseURL:'http://localhost:5000/'
+    baseURL:'https://food-store-server-g3gt.onrender.com'    
+    // baseURL:'http://localhost:5000/'
 })
 
 const useAxiosSecure = () => {
