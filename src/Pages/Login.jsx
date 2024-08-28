@@ -1,15 +1,19 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../Login-registration/GoogleLogin";
 import useAuth from "../hooks/useAuth";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const {signIn,user}=useAuth()
   const location=useLocation()
   const navigate=useNavigate()
+  const [showPassword,setShowPassword]=useState(false)
   const from=location?.state?.from?.pathname||'/';
+  const togglePasswordVisibility=()=>{
+    setShowPassword((prevState)=>!prevState)
+  }
     const handleSubmit=async(e)=>{
         e.preventDefault();
         const form = e.target;
@@ -17,14 +21,33 @@ const Login = () => {
         const password = form.password.value;
     
         console.log(email, password);
-      await signIn(email,password)
+    //   await signIn(email,password)
+    //   Swal.fire({
+    //     title: 'Success!',
+    //     text: 'Login has become successfull',
+    //     icon: 'success',
+    //     confirmButtonText: 'OK'
+    // });
+    try {
+      await signIn(email, password);
       Swal.fire({
         title: 'Success!',
-        text: 'Login has become successfull',
+        text: 'Login has become successful',
         icon: 'success',
         confirmButtonText: 'OK'
-    });
+      });
+      navigate(from, { replace: true });
+    } catch (error) {
+      Swal.fire({
+        title: 'Error!',
+        text: error.message, // Display the error message returned by Firebase or custom message
+        icon: 'error',
+        confirmButtonText: 'Try Again'
+      });
     }
+  };
+    
+    
     useEffect(()=>{
       if(user){
         navigate(from,{replace:true})
@@ -44,13 +67,24 @@ const Login = () => {
                 </label>
                 <input type="email" placeholder="email" className="input input-bordered"name="email" required />
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-lg">Password</span>
-                </label>
-                <input type="password" placeholder="password" className="input input-bordered" name="password"required />
-                
-              </div>
+              <div className="form-control relative">
+              <label className="label">
+                <span className="label-text text-lg">Password</span>
+              </label>
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="password"
+                className="input input-bordered pr-10"
+                name="password"
+                required
+              />
+              <span
+                onClick={togglePasswordVisibility}
+                className="absolute right-3 top-16 transform -translate-y-1/2 cursor-pointer text-xl"
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
               <div className="form-control mt-6">
                 <button className="btn bg-amber-500 text-xl">Login</button>
               </div>

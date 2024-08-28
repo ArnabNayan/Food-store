@@ -76,7 +76,7 @@ const AddReview = () => {
         />
         <button
           onClick={handleAddReview}
-          className="bg-yellow-600  text-white py-2 px-4 mt-4"
+          className="bg-yellow-600 hover:bg-yellow-800  text-white py-2 px-4 mt-4"
         >
           Add Review
         </button>

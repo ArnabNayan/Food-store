@@ -57,7 +57,7 @@ const FoodieZone = () => {
                 </div> 
              </p>
              <Link data-aos="zoom-in" data-aos-duration="2000" to="/about">
-             <button className="bg-amber-500 text-white font-serif rounded-md lg:mt-10 mt-5 lg:ms-10 py-3 px-6">About us</button>
+             <button className="bg-amber-500 hover:bg-amber-700 text-white font-serif rounded-md lg:mt-10 mt-5 lg:ms-10 py-3 px-6">About us</button>
              </Link>
             
             </div>

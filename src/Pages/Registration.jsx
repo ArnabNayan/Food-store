@@ -4,32 +4,56 @@ import { useState } from "react";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../hooks/useAxiosPublic";
-
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { storage } from "../Firebase/firebase.config";
 
 
 const Registration = () => {
     const [pass,setPass]=useState(true)
+    const [showPassword,setShowPassword]=useState(false)
     const {createUser,user,updateUserProfile}=useAuth()
     const location=useLocation()
     const navigate=useNavigate()
     const axiosPublic=useAxiosPublic()
     const from=location?.state?.from?.pathname||'/';
+    const togglePasswordVisibility=()=>{
+      setShowPassword((prevState)=>!prevState)
+    }
     const handleSubmit=async(e)=>{
       e.preventDefault();
       const form=e.target;
       const name=form.name.value;
       const email=form.email.value;
-      const photoURL = form.photoURL.value;
+      // const photoURL = form.photoURL.value;
+      const photoFile = form.photo.files[0];
       const password=form.password.value;
       const confirm_password=form.confirm_password.value;
+    
       if(password!==confirm_password){
          setPass(false)
       }
-      console.log(name,email,photoURL,password,confirm_password)
+      // const photoURL = photoFile ? URL.createObjectURL(photoFile) : ''; 
+      // console.log(name,email,photoURL,password,confirm_password)
       if(password==confirm_password){
         try{
-          await createUser(email,password)
-          await updateUserProfile(name,photoURL)
+          // Upload the photo to Firebase Storage
+        // const storageRef = ref(storage, `profilePhotos/${photoFile.name}`);
+        // const snapshot = await uploadBytes(storageRef, photoFile);
+        // const photoURL = await getDownloadURL(snapshot.ref);
+        //   await createUser(email,password)
+        //   await updateUserProfile(name,photoURL)
+        const userCredential = await createUser(email, password);
+        // eslint-disable-next-line no-unused-vars
+        const user = userCredential.user;
+    
+        // Upload the photo to Firebase Storage
+        const storageRef = ref(storage, `profilePhotos/${photoFile.name}`);
+        await uploadBytes(storageRef, photoFile);
+        const photoURL = await getDownloadURL(storageRef);
+    
+        // Update user profile
+        await updateUserProfile(name, photoURL);
           const userInfo={
             name:name,
             email:email,
@@ -53,6 +77,7 @@ const Registration = () => {
         }catch (error) {
           console.error("Error creating user:", error);
       }
+     
       if(user){
           navigate(from)
         }
@@ -79,28 +104,70 @@ const Registration = () => {
                 </label>
                 <input type="email" placeholder="email" className="input input-bordered"name="email" required />
               </div>
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label className="label">
                   <span className="label-text text-md">PhotoURL</span>
                 </label>
                 <input type="text" placeholder="photoURL" className="input input-bordered" name="photoURL"required />
                 
-              </div>
+              </div> */}
+               <div className="form-control">
+              <label className="label">
+                <span className="label-text text-md">Photo</span>
+              </label>
+              <input type="file" className="input input-bordered" name="photo" accept="image/*" required />
+            </div>
 
-              <div className="form-control">
+              {/* <div className="form-control">
                 <label className="label">
                   <span className="label-text text-md">Password</span>
                 </label>
                 <input type="password" placeholder="password" className="input input-bordered" name="password"required />
                 
-              </div>
-              <div className="form-control">
+              </div> */}
+               <div className="form-control relative">
+              <label className="label">
+                <span className="label-text text-lg">Password</span>
+              </label>
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="password"
+                className="input input-bordered pr-10"
+                name="password"
+                required
+              />
+              <span
+                onClick={togglePasswordVisibility}
+                className="absolute right-3 top-16 transform -translate-y-1/2 cursor-pointer text-xl"
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
+              {/* <div className="form-control">
                 <label className="label">
                   <span className="label-text text-md">Confirm Password</span>
                 </label>
                 <input type="password" placeholder="confirm password" className="input input-bordered"name="confirm_password" required />
                 
-              </div>
+              </div> */}
+               <div className="form-control relative">
+              <label className="label">
+                <span className="label-text text-lg">Confirm Password</span>
+              </label>
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="confirm password"
+                className="input input-bordered pr-10"
+                name="confirm_password"
+                required
+              />
+              <span
+                onClick={togglePasswordVisibility}
+                className="absolute right-3 top-16 transform -translate-y-1/2 cursor-pointer text-xl"
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
              {
                 !pass && (
                     <div className="my-2">

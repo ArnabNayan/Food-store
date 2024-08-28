@@ -11,7 +11,7 @@ const Offer = () => {
          This is a new additional special spicy and tasty food with limited time,Offer closes soon,so quickly make your decision.
         </p>
         <Countdowns data-aos="zoom-in" data-aos-duration="2000"/>
-        <Link data-aos="zoom-in" data-aos-duration="2000" to="/contact" className="bg-amber-500 text-white font-serif rounded-md py-3 px-6">Visit Now</Link>
+        <Link data-aos="zoom-in" data-aos-duration="2000" to="/contact" className="bg-amber-500 hover:bg-amber-700 text-white font-serif rounded-md py-3 px-6">Visit Now</Link>
 
       </div>
      

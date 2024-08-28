@@ -201,7 +201,7 @@ const AddFood = () => {
         setCategory(selectedCategory);
         setIsDropdownOpen(false);
     };
-
+   
     const handleSubmit = async (e) => {
         e.preventDefault();
         const form = e.target;
@@ -209,14 +209,15 @@ const AddFood = () => {
         const title = form.title?.value;
         const description = form.description?.value;
         const image_url = form.image_url?.value;
+        // const photoFile = form.image_url.files[0];
         const price = form.price?.value;
         const ratings = form.ratings?.value;
         const ingredients = form.ingredients?.value;
         const special_offers = form.special_offers?.value;
 
-        
+        // const image_url = URL.createObjectURL(photoFile);
 
-        const data = { title, description, image_url, price, ratings, ingredients, category, special_offers };
+        const data = { title, description, image_url,  price, ratings, ingredients, category, special_offers };
 
         const isConfirmed = await Swal.fire({
             title: 'Are you sure?',
@@ -240,6 +241,7 @@ const AddFood = () => {
                     console.log(data);
                     form.reset();
                     setCategory("");
+                  
                     Swal.fire({
                         title: 'Success!',
                         text: 'Food item has been added successfully',
@@ -292,6 +294,7 @@ const AddFood = () => {
                           
                         />
                     </div>
+                  
                     <div className="mt-2">
                         <input
                             className="bg-gray-100 p-4 w-full border border-amber-500 rounded-lg"
