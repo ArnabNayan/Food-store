@@ -30,7 +30,7 @@ const Gallery = () => {
       >
         <SwiperSlide>
           <img className='mb-8 transform transition-transform duration-300 hover:scale-110' src="https://img.freepik.com/premium-photo/tasty-burger-restaurant-isolated-blur-background-generated-by-ai_751264-550.jpg" alt="" />
-          <h1 className="uppercase text-center text-white font-serif font-bold text-sm lg:text-2xl ">Burger</h1>
+          <h1 className="uppercase text-center text-white -mt-16 font-serif font-bold text-sm lg:text-2xl ">Burger</h1>
         </SwiperSlide>
         <SwiperSlide>
           <img className='mb-8 transform transition-transform duration-300 hover:scale-110' src="https://web-assets.limewire.media/u/1f65cba7-6523-402f-943d-ce61ebb19f3f/38402da7-4b7c-49f1-ad55-8aaae99f2dee.d/post_image_large.jpeg" alt="" />
