@@ -1,5 +1,5 @@
 import Countdown from 'react-countdown';
-const endingDate=new Date("2024-09-20")
+const endingDate=new Date("2025-01-01")
 
 const Countdowns = () => {
     return (
